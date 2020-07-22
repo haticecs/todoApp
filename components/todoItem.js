@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { CheckBox } from "react-native-elements";
-
-const imgDelete = require("../assets/delete.png");
+import { MaterialIcons } from "@expo/vector-icons";
 
 export default function TodoItem({ item, pressHandler }) {
   const [isChecked, setChecked] = useState(false);
@@ -20,9 +19,9 @@ export default function TodoItem({ item, pressHandler }) {
       <Text style={isChecked ? styles.striketext : styles.text}>
         {item.name}
       </Text>
-      <View style={styles.delete}>
+      <View style={styles.icon}>
         <TouchableOpacity onPress={() => pressHandler(item.key)}>
-          <Image style={styles.image} source={imgDelete} />
+          <MaterialIcons name="delete" size={40} color={"#ddd"} />
         </TouchableOpacity>
       </View>
     </View>
@@ -59,11 +58,7 @@ const styles = StyleSheet.create({
     textDecorationLine: "line-through",
     textDecorationStyle: "solid",
   },
-  image: {
-    width: 30,
-    height: 30,
-  },
-  delete: {
+  icon: {
     flex: 1,
     flexDirection: "row-reverse",
     marginLeft: 5,
