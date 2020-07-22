@@ -20,7 +20,7 @@ export default function TodoItem({ item, pressHandler }) {
       <Text style={isChecked ? styles.striketext : styles.text}>
         {item.name}
       </Text>
-      <View style={styles.button}>
+      <View style={styles.delete}>
         <TouchableOpacity onPress={() => pressHandler(item.key)}>
           <Image style={styles.image} source={imgDelete} />
         </TouchableOpacity>
@@ -63,8 +63,9 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
   },
-  button: {
+  delete: {
     flex: 1,
     flexDirection: "row-reverse",
+    marginLeft: 5,
   },
 });

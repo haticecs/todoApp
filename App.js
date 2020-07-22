@@ -52,7 +52,7 @@ export default function App() {
           <Text style={styles.title}>You can do anything, here your todos</Text>
           <View style={styles.content}>
             <AddTodo submitHandler={submitHandler} />
-            <View>
+            <View style={styles.list}>
               <FlatList
                 data={todos}
                 renderItem={({ item }) => (
@@ -77,9 +77,6 @@ const styles = StyleSheet.create({
     height: "100%",
     position: "absolute",
   },
-  content: {
-    padding: 20,
-  },
   title: {
     fontSize: 28,
     marginTop: 30,
@@ -89,5 +86,12 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#fff",
     padding: 5,
+  },
+  content: {
+    flex: 1,
+    padding: 20,
+  },
+  list: {
+    flex: 1, //to use the available space in the screen.
   },
 });
