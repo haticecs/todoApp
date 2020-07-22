@@ -49,10 +49,7 @@ export default function App() {
     >
       <View style={styles.container}>
         <ImageBackground source={Imgbackground} style={styles.image}>
-          <Text style={styles.title}>
-            {" "}
-            You can do anything, here your todos{" "}
-          </Text>
+          <Text style={styles.title}>You can do anything, here your todos</Text>
           <View style={styles.content}>
             <AddTodo submitHandler={submitHandler} />
             <View>
